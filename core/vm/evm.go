@@ -59,6 +59,10 @@ func (evm *EVM) precompile(addr common.Address) (PrecompiledContract, bool) {
 		precompiles = PrecompiledContractsHomestead
 	}
 	p, ok := precompiles[addr]
+	// MEDUSA: Added additional precompile extensions.
+	if !ok && evm.Config.ConfigExtensions != nil && evm.Config.AdditionalPrecompiles != nil {
+		p, ok = evm.Config.AdditionalPrecompiles[addr]
+	}
 	return p, ok
 }
 
@@ -522,7 +526,8 @@ func (evm *EVM) create(caller ContractRef, codeAndHash *codeAndHash, gas uint64,
 	}
 
 	// Check whether the max code size has been exceeded, assign err if the case.
-	if err == nil && evm.chainRules.IsEIP158 && len(ret) > params.MaxCodeSize {
+	// MEDUSA: Added override for code size check.
+	if err == nil && evm.chainRules.IsEIP158 && len(ret) > params.MaxCodeSize && !evm.Config.OverrideCodeSizeCheck {
 		err = ErrMaxCodeSizeExceeded
 	}
 
