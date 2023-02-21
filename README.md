@@ -32,7 +32,9 @@ Each forked release can be observed as its own branch in this repository. It con
   - Your local repository you worked with in the last steps should still be on the branch which has the latest vanilla go-ethereum release on it.
   - To apply the original patches over it, which we generated earlier, run `git am -3 .\patches\<patch name>.patch` for any patches.
   - The changes should now be applied, resolve merge conflicts from the patch (if any), and push to remote
-- Testing the new fork:
+  
+### Testing
+
   - Testing is currently performed through medusa. Update medusa's medusa-geth submodule to your newest release, and run all medusa tests.
   - Tests should pass on all platforms for the fork to be considered valid. medusa's CI will test all major platforms for you (Linux, macOS, Windows).
   - If a test fails, update the medusa-geth branch with any fixes, and repeat these testing steps until all issues are resolved.
