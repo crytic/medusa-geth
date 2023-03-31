@@ -1,6 +1,6 @@
 # medusa-geth
 
-`medusa-geth` is a fork of [go-ethereum](https://github.com/ethereum/go-ethereum) which introduces changes to enable additional testing capabilities within [medusa](https://github.com/trailofbits/medusa).
+`medusa-geth` is a fork of [go-ethereum](https://github.com/ethereum/go-ethereum) which introduces changes to enable additional testing capabilities within [medusa](https://github.com/crytic/medusa).
 
 Each forked release can be observed as its own branch in this repository. It contains the original commits of the release, as well commits which patch the release to add the functionality in the fork.
 
