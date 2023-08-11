@@ -395,7 +395,8 @@ func (st *StateTransition) TransitionDb() (*ExecutionResult, error) {
 	}
 
 	// Check whether the init code size has been exceeded.
-	if rules.IsShanghai && contractCreation && len(msg.Data) > params.MaxInitCodeSize {
+	// MEDUSA: Added override for code size check.
+	if rules.IsShanghai && contractCreation && len(msg.Data) > params.MaxInitCodeSize && !st.evm.Config.OverrideCodeSizeCheck {
 		return nil, fmt.Errorf("%w: code size %v limit %v", ErrMaxInitCodeSizeExceeded, len(msg.Data), params.MaxInitCodeSize)
 	}
 
