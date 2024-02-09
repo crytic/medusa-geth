@@ -34,6 +34,23 @@ As releases of `go-ethereum` are made, forked changes will need to be migrated o
   - To apply the original patches over it, which we generated earlier, run `git am -3 .\patches\<patch name>.patch` for any patches.
   - The changes should now be applied, resolve merge conflicts from the patch (if any), and push to remote
   
+### Linking the latest `medusa-geth` branch to `medusa`
+Note that `medusa-geth` is linked to `medusa` through a [pseudo-version](https://go.dev/ref/mod#pseudo-versions), not 
+through a traditional release tag. A pseudo-version is a specially formatted pre-release version that encodes 
+information about a specific revision in a version control repository. To link the new `medusa-geth` forked branch, 
+follow the below steps:
+  - Go to your medusa repository, and run `go get github.com/crytic/medusa-geth@vx.y.z`. Note that `vx.y.z` should be the
+    name of the new `medusa-geth` branch that was created. The output will look something like this:
+```bash
+$ go get github.com/crytic/medusa-geth@v1.12.0
+go: github.com/crytic/medusa-geth@v1.12.0: invalid version: resolves to version v0.0.0-20240209160711-dfded09070ca (v1.12.0 is not a tag)
+```
+> **NOTE**: Do not worry about the "invalid version" error in the output above
+
+  - Copy the pseudo-version value. In the example above, it is `v0.0.0-20240209160711-dfded09070ca`.
+  - Open the `go.mod` file in the `medusa` repository and update the pseudo-version for `medusa-geth`. You can find this
+    by looking for the `replace` directive at the bottom of the `go.mod` file.
+
 ### Testing
 
   - Testing is currently performed through `medusa`. Update `medusa`'s `medusa-geth` dependency reference to match your newest release, and run all `medusa` tests.
