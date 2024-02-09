@@ -174,6 +174,21 @@ func (db *Database) Close() error {
 	return db.backend.Close()
 }
 
+// MEDUSA: Below is an exposed function that will allow medusa to _explicitly_ clear the database's fast cache. This
+// must be done to evict the cache and prevent any memory leakages in the test chain
+
+// ResetCache will reset (wipe) the Database.clean cache so that the associated memory can be cleared
+func (db *Database) ResetCache() {
+	// If there is no cache attached, there is nothing to do
+	if db.cleans == nil {
+		return
+	}
+
+	// Reset the cache
+	db.cleans.Reset()
+	return
+}
+
 // saveCache saves clean state cache to given directory path
 // using specified CPU cores.
 func (db *Database) saveCache(dir string, threads int) error {
