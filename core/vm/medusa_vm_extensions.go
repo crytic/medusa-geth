@@ -12,4 +12,8 @@ type ConfigExtensions struct {
 
 	// AdditionalPrecompiles defines additional precompile contracts to be used by the VM.
 	AdditionalPrecompiles map[common.Address]PrecompiledContract
+
+	// ContractAddressOverrides maps the hash of a contract's init bytecode to the hardcoded address to where it should be
+	// deployed. This allows for deterministic deployments of contracts.
+	ContractAddressOverrides map[common.Hash]common.Address
 }
