@@ -578,6 +578,23 @@ func (evm *EVM) create(caller ContractRef, codeAndHash *codeAndHash, gas uint64,
 // Create creates a new contract using code as deployment code.
 func (evm *EVM) Create(caller ContractRef, code []byte, gas uint64, value *uint256.Int) (ret []byte, contractAddr common.Address, leftOverGas uint64, err error) {
 	contractAddr = crypto.CreateAddress(caller.Address(), evm.StateDB.GetNonce(caller.Address()))
+
+	// MEDUSA: This code block checks to see if there is a deterministic address that this contract needs to be
+	// deployed to. If so, the `create` function is called with that deterministic address
+	// Optimization: Only check the mapping if it is instantiated with one or more addresses.
+	if len(evm.Config.ConfigExtensions.ContractAddressOverrides) > 0 {
+		// Hash the init bytecode
+		codeHash := crypto.Keccak256Hash(code)
+		if overrideAddr, ok := evm.Config.ConfigExtensions.ContractAddressOverrides[codeHash]; ok {
+			// Remove the key-value pair from the mapping
+			delete(evm.Config.ConfigExtensions.ContractAddressOverrides, codeHash)
+
+			// Call the create function with the override address
+			return evm.create(caller, &codeAndHash{code: code}, gas, value, overrideAddr, CREATE)
+		}
+	}
+	// End of medusa-specific code
+
 	return evm.create(caller, &codeAndHash{code: code}, gas, value, contractAddr, CREATE)
 }
 
