@@ -10,7 +10,6 @@ Each forked release can be observed as its own branch in this repository. It con
 - Introduction of a `ConfigExtensions` struct within `vm.Config`, containing additional controls for the EVM.
 - Ability to disable EVM code size checks through `ConfigExtensions` (without disabling the rest of EIP158).
 - Ability to specify additional precompiles through  `ConfigExtensions`.
-- Updated the stateDB's API to allow for the resetting (wiping) of the state trie's cache. 
 
 ## Contributing
 
