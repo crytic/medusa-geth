@@ -61,8 +61,14 @@ func (s *ForkStateDb) Empty(addr common.Address) bool {
 	if s.existsLocally(addr) && so.empty() {
 		return true
 	} else {
-		so = s.populateStateObjectFromFork(addr)
-		return so.empty()
+		// this might be inadequate if self-destruct is possible
+
+		if s.existsLocally(addr) {
+			return false
+		} else {
+			so = s.populateStateObjectFromFork(addr)
+			return so.empty()
+		}
 	}
 }
 
