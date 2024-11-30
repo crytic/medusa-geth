@@ -773,6 +773,7 @@ func (s *StateDB) RevertToSnapshot(revid int) {
 // MEDUSA: RevertToSnapshotPersisted is another version of revert to snapshot (see above) that does not remove the
 // valid revisions if snapshots are requested to be persisted. This means if there are snapshots [1, 2, 3] and someone
 // reverts back to 1, the user can still revert to 2 or 3 after that.
+// TODO(bfs): remove? unused.
 func (s *StateDB) RevertToSnapshotPersisted(revid int, persist bool) {
 	if !persist {
 		s.RevertToSnapshot(revid)
