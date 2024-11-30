@@ -13,13 +13,13 @@ type ForkStateDb struct {
 	remoteStateProvider RemoteStateProvider
 }
 
-func NewProxyDB(root common.Hash, db Database, remoteStateProviderFactory RemoteStateProviderFactory) (*ForkStateDb, error) {
+func NewForkedStateDb(root common.Hash, db Database, remoteStateProvider RemoteStateProvider) (*ForkStateDb, error) {
 	tr, err := db.OpenTrie(root)
 	if err != nil {
 		return nil, err
 	}
 	sdb := &ForkStateDb{
-		remoteStateProvider: remoteStateProviderFactory.New(),
+		remoteStateProvider: remoteStateProvider,
 		StateDB: &StateDB{
 			db:                   db,
 			trie:                 tr,
