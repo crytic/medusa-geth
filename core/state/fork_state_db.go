@@ -102,7 +102,10 @@ func (s *ForkStateDb) populateStateObjectFromFork(addr common.Address) *stateObj
 			obj.SetCode(crypto.Keccak256Hash(nil), nil)
 			return obj
 		} else {
-			panic("populate from fork")
+			// something is wrong with the RPC, or the fuzzer's context was cancelled.
+			// smuggle the error out as a dbErr
+			s.dbErr = err.Error
+			return s.createObject(addr)
 		}
 	} else {
 		obj = s.createObject(addr)
