@@ -1,6 +1,8 @@
 package state
 
 import (
+	"context"
+	"errors"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/tracing"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -103,8 +105,11 @@ func (s *ForkStateDb) populateStateObjectFromFork(addr common.Address) *stateObj
 			return obj
 		} else {
 			// something is wrong with the RPC, or the fuzzer's context was cancelled.
-			// smuggle the error out as a dbErr
-			s.dbErr = err.Error
+			// we don't care about propagating the error when the context is cancelled,
+			// so do not propagate via dbErr
+			if !errors.Is(err.Error, context.Canceled) {
+				s.dbErr = err.Error
+			}
 			return s.createObject(addr)
 		}
 	} else {
@@ -196,8 +201,11 @@ func (s *ForkStateDb) populateSlotFromFork(addr common.Address, hash common.Hash
 			return common.Hash{}
 		} else {
 			// something is wrong with the RPC, or the fuzzer's context was cancelled.
-			// smuggle the error out as a dbErr
-			s.dbErr = err.Error
+			// we don't care about propagating the error when the context is cancelled,
+			// so do not propagate via dbErr
+			if !errors.Is(err.Error, context.Canceled) {
+				s.dbErr = err.Error
+			}
 			return common.Hash{}
 		}
 	} else {
