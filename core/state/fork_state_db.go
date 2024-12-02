@@ -192,7 +192,10 @@ func (s *ForkStateDb) populateSlotFromFork(addr common.Address, hash common.Hash
 			// data == zero because we wrote the zero
 			return common.Hash{}
 		} else {
-			panic("getState err")
+			// something is wrong with the RPC, or the fuzzer's context was cancelled.
+			// smuggle the error out as a dbErr
+			s.dbErr = err.Error
+			return common.Hash{}
 		}
 	} else {
 		// write & return the fork-provided value
