@@ -266,6 +266,8 @@ func (s *ForkStateDb) SetCode(addr common.Address, code []byte) {
 	if stateObject == nil {
 		stateObject = s.populateStateObjectFromFork(addr)
 	}
+
+	s.remoteStateProvider.MarkContractDeployed(addr, s.nextRevisionId)
 	stateObject.SetCode(crypto.Keccak256Hash(code), code)
 }
 
