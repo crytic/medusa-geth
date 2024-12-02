@@ -20,6 +20,10 @@ type RemoteStateProvider interface {
 	// snapshot reverts, future imports for this slot should be forbidden.
 	MarkSlotWritten(addr common.Address, slot common.Hash, snapId int)
 
+	// MarkContractDeployed Notifies the state provider that a contract has been successfully deployed to the specified
+	// addr. State providers can use this information to optimize state slot reads and reduce RPC requests.
+	MarkContractDeployed(addr common.Address, snapId int)
+
 	// MarkStateObjectWritten Notifies the state provider that there has been a write to the specified account, and
 	// unless this snapshot reverts, future imports for this account should be forbidden.
 	// MarkStateObjectWritten(addr common.Address, snapId int)
