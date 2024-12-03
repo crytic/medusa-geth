@@ -55,7 +55,7 @@ func (s *ForkStateDb) Exist(addr common.Address) bool {
 	// If you look at the definition of empty, it says that all state objects that don't exist are also empty,
 	// but not all empty state objects don't exist. So what happens when there's a state object that's empty and we say it doesn't exist?
 	// Does this matter? I'm not sure. I think it'll only impact gas/CREATE behavior.
-	return s.Empty(addr)
+	return !s.Empty(addr)
 }
 
 func (s *ForkStateDb) Empty(addr common.Address) bool {
