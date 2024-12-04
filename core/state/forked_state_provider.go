@@ -24,10 +24,6 @@ type RemoteStateProvider interface {
 	// addr. State providers can use this information to optimize state slot reads and reduce RPC requests.
 	MarkContractDeployed(addr common.Address, snapId int)
 
-	// MarkStateObjectWritten Notifies the state provider that there has been a write to the specified account, and
-	// unless this snapshot reverts, future imports for this account should be forbidden.
-	// MarkStateObjectWritten(addr common.Address, snapId int)
-
 	// NotifyRevertedToSnapshot Notifies the state provider that the data it imported beyond snapId has been reverted.
 	NotifyRevertedToSnapshot(snapId int)
 }

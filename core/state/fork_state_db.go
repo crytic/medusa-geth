@@ -64,7 +64,6 @@ func (s *ForkStateDb) Empty(addr common.Address) bool {
 		return true
 	} else {
 		// this might be inadequate if self-destruct is possible
-
 		if s.existsLocally(addr) {
 			return false
 		} else {
@@ -167,7 +166,7 @@ func (s *ForkStateDb) GetState(addr common.Address, hash common.Hash) common.Has
 		if data != (common.Hash{}) {
 			return data
 		}
-		// if state == 0, we need to check the fork provider to see if we're missing data
+		// if data == 0, we need to check the fork provider to see if we're missing data
 	}
 	return s.populateSlotFromFork(addr, hash)
 }
@@ -182,7 +181,7 @@ func (s *ForkStateDb) GetCommittedState(addr common.Address, hash common.Hash) c
 		if data != (common.Hash{}) {
 			return data
 		}
-		// if state == 0, we need to check the fork provider to see if we're missing data
+		// if data == 0, we need to check the fork provider to see if we're missing data
 	}
 	return s.populateSlotFromFork(addr, hash)
 }
@@ -215,8 +214,8 @@ func (s *ForkStateDb) populateSlotFromFork(addr common.Address, hash common.Hash
 	}
 }
 
-// HasSelfDestructed Technically, we should be checking the RPC for this. IMO it doesn't really matter because self destruct is basically
-// irrelevant for us. Function is only overridden here for this comment.
+// HasSelfDestructed Technically, we should be checking the RPC for this. IMO it doesn't really matter because
+// self-destruct is basically irrelevant for us in 2024+. Function is only overridden here for this comment.
 func (s *ForkStateDb) HasSelfDestructed(addr common.Address) bool {
 	stateObject := s.getStateObject(addr)
 	if stateObject != nil {
