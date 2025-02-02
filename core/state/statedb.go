@@ -770,30 +770,6 @@ func (s *StateDB) RevertToSnapshot(revid int) {
 	s.validRevisions = s.validRevisions[:idx]
 }
 
-// MEDUSA: RevertToSnapshotPersisted is another version of revert to snapshot (see above) that does not remove the
-// valid revisions if snapshots are requested to be persisted. This means if there are snapshots [1, 2, 3] and someone
-// reverts back to 1, the user can still revert to 2 or 3 after that.
-// TODO(bfs): remove? unused.
-func (s *StateDB) RevertToSnapshotPersisted(revid int, persist bool) {
-	if !persist {
-		s.RevertToSnapshot(revid)
-		return
-	}
-
-	// Find the snapshot in the stack of valid snapshots.
-	idx := sort.Search(len(s.validRevisions), func(i int) bool {
-		return s.validRevisions[i].id >= revid
-	})
-	if idx == len(s.validRevisions) || s.validRevisions[idx].id != revid {
-		panic(fmt.Errorf("revision id %v cannot be reverted", revid))
-	}
-	snapshot := s.validRevisions[idx].journalIndex
-
-	// Replay the journal to undo changes and remove invalidated snapshots
-	s.journal.revert(s, snapshot)
-	// MEDUSA: note that we do not update s.validRevisions to remove all snapshots up till idx
-}
-
 // GetRefund returns the current value of the refund counter.
 func (s *StateDB) GetRefund() uint64 {
 	return s.refund
