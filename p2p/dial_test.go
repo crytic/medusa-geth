@@ -27,11 +27,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/internal/testlog"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
+	"github.com/crytic/medusa-geth/common/mclock"
+	"github.com/crytic/medusa-geth/internal/testlog"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/netutil"
 )
 
 // This test checks that dynamic dials are launched from discovery results.

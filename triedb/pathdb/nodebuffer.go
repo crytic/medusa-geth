@@ -23,12 +23,12 @@ import (
 	"time"
 
 	"github.com/VictoriaMetrics/fastcache"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/trie/trienode"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/trie/trienode"
 )
 
 // nodebuffer is a collection of modified trie nodes to aggregate the disk

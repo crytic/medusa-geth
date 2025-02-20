@@ -26,17 +26,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/fourbyte"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/crytic/medusa-geth/accounts"
+	"github.com/crytic/medusa-geth/accounts/keystore"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/internal/ethapi"
+	"github.com/crytic/medusa-geth/rlp"
+	"github.com/crytic/medusa-geth/signer/core"
+	"github.com/crytic/medusa-geth/signer/core/apitypes"
+	"github.com/crytic/medusa-geth/signer/fourbyte"
+	"github.com/crytic/medusa-geth/signer/storage"
 )
 
 // Used for testing

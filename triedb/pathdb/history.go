@@ -24,11 +24,11 @@ import (
 	"slices"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/trie/triestate"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/trie/triestate"
 	"golang.org/x/exp/maps"
 )
 

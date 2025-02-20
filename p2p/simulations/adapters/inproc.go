@@ -25,13 +25,13 @@ import (
 	"net"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/simulations/pipes"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/node"
+	"github.com/crytic/medusa-geth/p2p"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/simulations/pipes"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/gorilla/websocket"
 )
 

@@ -17,10 +17,10 @@
 package trie
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/triedb/database"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/triedb/database"
 )
 
 // trieReader is a wrapper of the underlying node reader. It's not safe

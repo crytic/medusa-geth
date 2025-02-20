@@ -21,13 +21,13 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	cmath "github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core/tracing"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto/kzg4844"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/crytic/medusa-geth/common"
+	cmath "github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/core/tracing"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/core/vm"
+	"github.com/crytic/medusa-geth/crypto/kzg4844"
+	"github.com/crytic/medusa-geth/params"
 	"github.com/holiman/uint256"
 )
 

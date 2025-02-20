@@ -20,8 +20,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 const freezerVersion = 1 // The initial version tag of freezer table metadata

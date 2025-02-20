@@ -20,13 +20,13 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/consensus/ethash"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/params"
 )
 
 // TestTxIndexer tests the functionalities for managing transaction indexes.

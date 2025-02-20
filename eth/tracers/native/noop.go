@@ -20,10 +20,10 @@ import (
 	"encoding/json"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/tracing"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/tracers"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/tracing"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/eth/tracers"
 )
 
 func init() {

@@ -28,10 +28,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/crytic/medusa-geth/accounts"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/log"
 	mapset "github.com/deckarep/golang-set/v2"
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 // Minimum amount of time between cache reloads. This limit applies if the platform does

@@ -27,9 +27,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/core/rawdb/ancienttest"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/core/rawdb/ancienttest"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/rlp"
 	"github.com/stretchr/testify/require"
 )
 

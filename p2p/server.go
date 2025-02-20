@@ -31,16 +31,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/mclock"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p/discover"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/enr"
+	"github.com/crytic/medusa-geth/p2p/nat"
+	"github.com/crytic/medusa-geth/p2p/netutil"
 )
 
 const (

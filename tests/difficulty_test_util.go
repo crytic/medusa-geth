@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/consensus/ethash"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/params"
 )
 
 //go:generate go run github.com/fjl/gencodec -type DifficultyTest -field-override difficultyTestMarshaling -out gen_difficultytest.go

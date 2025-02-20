@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethereum/go-ethereum/beacon/blsync"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/beacon/blsync"
+	"github.com/crytic/medusa-geth/cmd/utils"
+	"github.com/crytic/medusa-geth/internal/debug"
+	"github.com/crytic/medusa-geth/internal/flags"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/node"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/urfave/cli/v2"
 )
 

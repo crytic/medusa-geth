@@ -25,13 +25,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/crytic/medusa-geth/accounts/scwallet"
+	"github.com/crytic/medusa-geth/accounts/usbwallet"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/console/prompt"
+	"github.com/crytic/medusa-geth/internal/jsre"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/accounts/scwallet"
-	"github.com/ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/console/prompt"
-	"github.com/ethereum/go-ethereum/internal/jsre"
-	"github.com/ethereum/go-ethereum/rpc"
 )
 
 // bridge is a collection of JavaScript utility methods to bride the .js runtime

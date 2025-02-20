@@ -19,16 +19,16 @@ package blsync
 import (
 	"strings"
 
-	"github.com/ethereum/go-ethereum/beacon/light"
-	"github.com/ethereum/go-ethereum/beacon/light/api"
-	"github.com/ethereum/go-ethereum/beacon/light/request"
-	"github.com/ethereum/go-ethereum/beacon/light/sync"
-	"github.com/ethereum/go-ethereum/beacon/types"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/ethdb/memorydb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/beacon/light"
+	"github.com/crytic/medusa-geth/beacon/light/api"
+	"github.com/crytic/medusa-geth/beacon/light/request"
+	"github.com/crytic/medusa-geth/beacon/light/sync"
+	"github.com/crytic/medusa-geth/beacon/types"
+	"github.com/crytic/medusa-geth/cmd/utils"
+	"github.com/crytic/medusa-geth/common/mclock"
+	"github.com/crytic/medusa-geth/ethdb/memorydb"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/urfave/cli/v2"
 )
 

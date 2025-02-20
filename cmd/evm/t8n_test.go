@@ -27,9 +27,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/cmd/evm/internal/t8ntool"
-	"github.com/ethereum/go-ethereum/internal/cmdtest"
-	"github.com/ethereum/go-ethereum/internal/reexec"
+	"github.com/crytic/medusa-geth/cmd/evm/internal/t8ntool"
+	"github.com/crytic/medusa-geth/internal/cmdtest"
+	"github.com/crytic/medusa-geth/internal/reexec"
 )
 
 func TestMain(m *testing.M) {

@@ -24,12 +24,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ethereum/go-ethereum"
-	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/event"
+	ethereum "github.com/crytic/medusa-geth"
+	"github.com/crytic/medusa-geth/accounts/abi"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/event"
 )
 
 const basefeeWiggleMultiplier = 2

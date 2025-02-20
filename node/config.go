@@ -25,11 +25,11 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p"
+	"github.com/crytic/medusa-geth/rpc"
 )
 
 const (

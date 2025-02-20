@@ -21,14 +21,14 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/internal/debug"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p"
+	"github.com/crytic/medusa-geth/p2p/discover"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/rpc"
 )
 
 // apis returns the collection of built-in RPC APIs.

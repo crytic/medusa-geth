@@ -25,17 +25,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state/snapshot"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/triedb"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/state/snapshot"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/eth/protocols/snap"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/triedb"
 )
 
 var (

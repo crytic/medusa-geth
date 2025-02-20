@@ -24,16 +24,16 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/misc/eip4844"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto/kzg4844"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/consensus/misc/eip4844"
+	"github.com/crytic/medusa-geth/core"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto/kzg4844"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/holiman/uint256"
 )
 
@@ -55,7 +55,7 @@ type TransactionArgs struct {
 
 	// We accept "data" and "input" for backwards-compatibility reasons.
 	// "input" is the newer name and should be preferred by clients.
-	// Issue detail: https://github.com/ethereum/go-ethereum/issues/15628
+	// Issue detail: https://github.com/crytic/medusa-geth/issues/15628
 	Data  *hexutil.Bytes `json:"data"`
 	Input *hexutil.Bytes `json:"input"`
 
@@ -198,7 +198,7 @@ func (args *TransactionArgs) setFeeDefaults(ctx context.Context, b Backend) erro
 	}
 	// If the tx has completely specified a fee mechanism, no default is needed.
 	// This allows users who are not yet synced past London to get defaults for
-	// other tx values. See https://github.com/ethereum/go-ethereum/pull/23274
+	// other tx values. See https://github.com/crytic/medusa-geth/pull/23274
 	// for more information.
 	eip1559ParamsSet := args.MaxFeePerGas != nil && args.MaxPriorityFeePerGas != nil
 	// Sanity check the EIP-1559 fee parameters if present.

@@ -26,14 +26,14 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/reexec"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/internal/reexec"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/node"
+	"github.com/crytic/medusa-geth/p2p"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/enr"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/gorilla/websocket"
 )
 

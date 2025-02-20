@@ -19,12 +19,12 @@ package sync
 import (
 	"sort"
 
-	"github.com/ethereum/go-ethereum/beacon/light"
-	"github.com/ethereum/go-ethereum/beacon/light/request"
-	"github.com/ethereum/go-ethereum/beacon/params"
-	"github.com/ethereum/go-ethereum/beacon/types"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/beacon/light"
+	"github.com/crytic/medusa-geth/beacon/light/request"
+	"github.com/crytic/medusa-geth/beacon/params"
+	"github.com/crytic/medusa-geth/beacon/types"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/log"
 )
 
 const maxUpdateRequest = 8 // maximum number of updates requested in a single request

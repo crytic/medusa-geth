@@ -26,11 +26,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/bitutil"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/p2p/rlpx"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/bitutil"
+	"github.com/crytic/medusa-geth/metrics"
+	"github.com/crytic/medusa-geth/p2p/rlpx"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 const (

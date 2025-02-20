@@ -29,12 +29,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/internal/testlog"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover/v5wire"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/internal/testlog"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p/discover/v5wire"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/enr"
+	"github.com/crytic/medusa-geth/rlp"
 	"github.com/stretchr/testify/require"
 )
 

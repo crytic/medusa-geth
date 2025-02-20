@@ -17,9 +17,9 @@
 package types
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/log"
 )
 
 var (

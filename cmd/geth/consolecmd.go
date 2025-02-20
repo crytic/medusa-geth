@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/internal/flags"
+	"github.com/crytic/medusa-geth/cmd/utils"
+	"github.com/crytic/medusa-geth/console"
+	"github.com/crytic/medusa-geth/internal/flags"
 	"github.com/urfave/cli/v2"
 )
 

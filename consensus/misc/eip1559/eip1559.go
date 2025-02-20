@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/misc"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/consensus/misc"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/params"
 )
 
 // VerifyEIP1559Header verifies some header attributes which were changed in EIP-1559,

@@ -23,7 +23,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/crytic/medusa-geth/common"
 )
 
 type testchain struct {

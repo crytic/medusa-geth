@@ -25,11 +25,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/msgrate"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/eth/protocols/eth"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p/msgrate"
 )
 
 const (

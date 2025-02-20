@@ -25,11 +25,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/forkid"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/core"
+	"github.com/crytic/medusa-geth/core/forkid"
+	"github.com/crytic/medusa-geth/p2p/enr"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/rlp"
 	"github.com/urfave/cli/v2"
 )
 

@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/ethdb/leveldb"
-	"github.com/ethereum/go-ethereum/ethdb/memorydb"
-	"github.com/ethereum/go-ethereum/ethdb/pebble"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/ethdb/leveldb"
+	"github.com/crytic/medusa-geth/ethdb/memorydb"
+	"github.com/crytic/medusa-geth/ethdb/pebble"
+	"github.com/crytic/medusa-geth/log"
 	"github.com/olekukonko/tablewriter"
 )
 
