@@ -10,11 +10,17 @@
 
 ## Updating fork branches
 
-As releases of `go-ethereum` are made, forked changes will need to be migrated on top of the new release in a new branch in this repository. We provide instructions below which describe how to produce git patches from a previous fork branch, clone `go-ethereum` into this repository under a new version branch, and apply the patches to it.
+As releases of `go-ethereum` are made, we follow a consistent/predictable process to update our fork: 
+- The new version will be cloned on a new branch in this repository, retaining existing commit history (see existing branches).
+- Our previous `medusa-geth` changes/commits are carried forward using git patches.
+- Any new changes are applied at this step (and will be carried forward in future fork git patches).
+- A final commit is made to refactor all module paths (e.g. in `go.mod`, `.go` imports, and all submodule files) from `github.com/ethereum/go-ethereum` to `github.com/crytic/medusa-geth`.
+  - Git patches cannot account for *newly added/removed imports* in `.go` files, so this is done as a manual replace-all operation. This commit should never be included in git patches mentioned previously.
 
 ### Creating git patches from previous branch
 
-  - Look at the latest release branch of this repository, note the latest commit hash (which we will call `BBBBBBB`) and the latest _original go-ethereum_ commit hash (which we will call `AAAAAAA`).
+  - Look at the latest release branch of this repository, obtain the last commit hash *prior to the module path refactor commit*.
+  - Take note of that^ commit hash (which we will call `BBBBBBB`) and the latest _original go-ethereum_ commit hash (which we will call `AAAAAAA`).
   - Clone this repository to your local machine.
   - Create a patch of the changes between commit `AAAAAAA` and `BBBBBBB` by using the command: `git format-patch -k AAAAAAA..BBBBBBB -o ./patches`, where `./patches` is the directory to save the generated patches.
 
@@ -33,6 +39,13 @@ As releases of `go-ethereum` are made, forked changes will need to be migrated o
   - Your local repository from the last steps should still be on the branch which has the latest vanilla `go-ethereum` release on it.
   - To apply the original patches over it, which we generated earlier, run `git am -3 .\patches\<patch name>.patch` for any patches.
   - The changes should now be applied, resolve merge conflicts from the patch (if any), and push to remote
+
+### Refactoring the module path
+ 
+  - Perform a "replace-all" operation across the entire repository, replacing `github.com/ethereum/go-ethereum` to `github.com/crytic/medusa-geth`.
+    - **Important**: JetBrains GoLand and Visual Studio Code load find-and-replace results asynchronously, so replacing all before it is done loading may not actually replace all!
+  - Triple check that the `go.mod` path and all `.go` import paths are replaced.
+    - Failure to do so may result in `medusa` failing to compile later on.
   
 ### Linking the latest `medusa-geth` branch to `medusa`
 Note that `medusa-geth` is linked to `medusa` through a [pseudo-version](https://go.dev/ref/mod#pseudo-versions), not 
@@ -48,8 +61,7 @@ go: github.com/crytic/medusa-geth@v1.12.0: invalid version: resolves to version 
 > **NOTE**: Do not worry about the "invalid version" error in the output above
 
   - Copy the pseudo-version value. In the example above, it is `v0.0.0-20240209160711-dfded09070ca`.
-  - Open the `go.mod` file in the `medusa` repository and update the pseudo-version for `medusa-geth`. You can find this
-    by looking for the `replace` directive at the bottom of the `go.mod` file.
+  - Open the `go.mod` file in the `medusa` repository and update the pseudo-version for `medusa-geth`.
 
 ### Testing
 
