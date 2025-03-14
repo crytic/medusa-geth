@@ -29,7 +29,7 @@ As releases of `go-ethereum` are made, we follow a consistent/predictable proces
 
   - Clone the `go-ethereum` repository at the exact commit hash for the release you wish to fork.
   - Add this repository as a remote (tracked repository) and remove the original `go-ethereum` repository as a remote.
-  - Create a new branch at your current position, name if `v<version number`, like the rest of `medusa-geth`'s releases (e.g. `v1.11.1`).
+  - Create a new branch at your current position, name it `v<version number`, like the rest of `medusa-geth`'s releases (e.g. `v1.11.1`).
   - Delete all release tags pulled locally to your machine using `git tag -d $(git tag -l)` (we do not want to push `go-ethereum` release tags to this repository).
   - Your local repository should now point to this repository as a remote, have no release tags locally, and be on a branch with a name that is consistent with our release version number. 
   - You can finally push your changes to the remote.
