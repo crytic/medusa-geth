@@ -46,8 +46,10 @@ As releases of `go-ethereum` are made, we follow a consistent/predictable proces
     - **Important**: JetBrains GoLand and Visual Studio Code load find-and-replace results asynchronously, so replacing all before it is done loading may not actually replace all!
   - Triple check that the `go.mod` path and all `.go` import paths are replaced.
     - Failure to do so may result in `medusa` failing to compile later on.
+  - Commit this refactor with the commit message `DO NOT INCLUDE IN PATCH SET: Refactor module path` or similar, for clarity.
   
 ### Linking the latest `medusa-geth` branch to `medusa`
+
 Note that `medusa-geth` is linked to `medusa` through a [pseudo-version](https://go.dev/ref/mod#pseudo-versions), not 
 through a traditional release tag. A pseudo-version is a specially formatted pre-release version that encodes 
 information about a specific revision in a version control repository. To link the new `medusa-geth` forked branch, 
