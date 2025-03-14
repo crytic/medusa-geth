@@ -47,6 +47,7 @@ As releases of `go-ethereum` are made, we follow a consistent/predictable proces
   - Triple check that the `go.mod` path and all `.go` import paths are replaced.
     - Failure to do so may result in `medusa` failing to compile later on.
   - Commit this refactor with the commit message `DO NOT INCLUDE IN PATCH SET: Refactor module path` or similar, for clarity.
+    - Only commit `medusa-geth` changes, not changes to any submodules that were inadvertently refactored in the process.
   
 ### Linking the latest `medusa-geth` branch to `medusa`
 
