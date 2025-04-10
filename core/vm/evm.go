@@ -42,6 +42,11 @@ type (
 
 func (evm *EVM) precompile(addr common.Address) (PrecompiledContract, bool) {
 	p, ok := evm.precompiles[addr]
+
+	// MEDUSA: Added additional precompile extensions.
+	if !ok && evm.Config.ConfigExtensions != nil && evm.Config.AdditionalPrecompiles != nil {
+		p, ok = evm.Config.AdditionalPrecompiles[addr]
+	}
 	return p, ok
 }
 
@@ -520,11 +525,9 @@ func (evm *EVM) initNewContract(contract *Contract, address common.Address) ([]b
 	}
 
 	// Check whether the max code size has been exceeded, assign err if the case.
-	if evm.chainRules.IsEIP158 && len(ret) > params.MaxCodeSize {
-		return ret, ErrMaxCodeSizeExceeded
 	// MEDUSA: Added override for code size check.
-	if err == nil && evm.chainRules.IsEIP158 && len(ret) > params.MaxCodeSize && !evm.Config.OverrideCodeSizeCheck {
-		err = ErrMaxCodeSizeExceeded
+	if evm.chainRules.IsEIP158 && len(ret) > params.MaxCodeSize && !evm.Config.OverrideCodeSizeCheck {
+		return ret, ErrMaxCodeSizeExceeded
 	}
 
 	// Reject code starting with 0xEF if EIP-3541 is enabled.
