@@ -1,6 +1,6 @@
 package vm
 
-import "github.com/ethereum/go-ethereum/common"
+import "github.com/crytic/medusa-geth/common"
 
 // MEDUSA: This entire file defines extensions for this package, used to power medusa features.
 

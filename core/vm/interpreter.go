@@ -19,11 +19,11 @@ package vm
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core/tracing"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/core/tracing"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/log"
 	"github.com/holiman/uint256"
 )
 
@@ -35,7 +35,7 @@ type Config struct {
 	ExtraEips               []int // Additional EIPS that are to be enabled
 
 	StatelessSelfValidation bool // Generate execution witnesses and self-check against them (testing purpose)
-	*ConfigExtensions             // MEDUSA: Extend the Config with ConfigExtensions.
+	*ConfigExtensions            // MEDUSA: Extend the Config with ConfigExtensions.
 }
 
 // ScopeContext contains the things that are per-call, such as stack and memory,

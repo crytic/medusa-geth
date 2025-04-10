@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/ethclient"
+	"github.com/crytic/medusa-geth/internal/debug"
+	"github.com/crytic/medusa-geth/internal/flags"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/urfave/cli/v2"
 )
 

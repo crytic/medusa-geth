@@ -20,11 +20,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/eth"
+	"github.com/crytic/medusa-geth/eth/ethconfig"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/node"
 )
 
 // FullSyncTester is an auxiliary service that allows Geth to perform full sync

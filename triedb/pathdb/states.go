@@ -23,11 +23,11 @@ import (
 	"slices"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/metrics"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 // counter helps in tracking items and their corresponding sizes.

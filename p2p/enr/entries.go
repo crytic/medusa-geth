@@ -23,7 +23,7 @@ import (
 	"net"
 	"net/netip"
 
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 // Entry is implemented by known node record entry types.

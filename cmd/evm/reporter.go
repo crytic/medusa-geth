@@ -20,8 +20,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/state"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/state"
 	"github.com/urfave/cli/v2"
 )
 

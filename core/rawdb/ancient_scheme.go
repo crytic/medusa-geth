@@ -19,7 +19,7 @@ package rawdb
 import (
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/ethdb"
+	"github.com/crytic/medusa-geth/ethdb"
 )
 
 // The list of table names of chain freezer.

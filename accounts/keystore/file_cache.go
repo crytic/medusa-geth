@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/crytic/medusa-geth/log"
 	mapset "github.com/deckarep/golang-set/v2"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 // fileCache is a cache of files seen during scan of keystore.

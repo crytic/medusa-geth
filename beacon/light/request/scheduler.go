@@ -19,7 +19,7 @@ package request
 import (
 	"sync"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/log"
 )
 
 // Module represents a mechanism which is typically responsible for downloading

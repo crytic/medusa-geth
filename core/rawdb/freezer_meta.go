@@ -22,8 +22,8 @@ import (
 	"math"
 	"os"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 const (

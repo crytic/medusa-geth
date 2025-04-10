@@ -23,12 +23,12 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/blocktest"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/internal/blocktest"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 // from bcValidBlockTest.json, "SimpleTx"

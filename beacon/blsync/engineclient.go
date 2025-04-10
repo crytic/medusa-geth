@@ -22,13 +22,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/beacon/engine"
-	"github.com/ethereum/go-ethereum/beacon/params"
-	"github.com/ethereum/go-ethereum/beacon/types"
-	"github.com/ethereum/go-ethereum/common"
-	ctypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/beacon/engine"
+	"github.com/crytic/medusa-geth/beacon/params"
+	"github.com/crytic/medusa-geth/beacon/types"
+	"github.com/crytic/medusa-geth/common"
+	ctypes "github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/rpc"
 )
 
 type engineClient struct {

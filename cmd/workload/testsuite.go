@@ -22,9 +22,9 @@ import (
 	"os"
 	"slices"
 
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/internal/utesting"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/internal/flags"
+	"github.com/crytic/medusa-geth/internal/utesting"
+	"github.com/crytic/medusa-geth/log"
 	"github.com/urfave/cli/v2"
 )
 

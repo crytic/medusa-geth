@@ -17,11 +17,11 @@
 package state
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/rlp"
+	"github.com/crytic/medusa-geth/trie"
 )
 
 // NewStateSync creates a new state trie download scheduler.

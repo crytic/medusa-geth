@@ -24,13 +24,13 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/eth/protocols/eth"
+	"github.com/crytic/medusa-geth/eth/protocols/snap"
+	"github.com/crytic/medusa-geth/p2p"
+	"github.com/crytic/medusa-geth/p2p/rlpx"
+	"github.com/crytic/medusa-geth/rlp"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/rlpx"
-	"github.com/ethereum/go-ethereum/rlp"
 )
 
 var (
