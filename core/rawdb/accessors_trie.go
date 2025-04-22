@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/log"
 )
 
 // HashScheme is the legacy hash-based state scheme with which trie nodes are

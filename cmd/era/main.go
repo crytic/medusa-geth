@@ -27,13 +27,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/internal/era"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/internal/era"
+	"github.com/crytic/medusa-geth/internal/ethapi"
+	"github.com/crytic/medusa-geth/internal/flags"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/trie"
 	"github.com/urfave/cli/v2"
 )
 

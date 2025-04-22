@@ -17,7 +17,7 @@
 package core
 
 import (
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/crytic/medusa-geth/core/types"
 )
 
 // NewTxsEvent is posted when a batch of transactions enter the transaction pool.

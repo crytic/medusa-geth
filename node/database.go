@@ -19,11 +19,11 @@ package node
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/ethdb/leveldb"
-	"github.com/ethereum/go-ethereum/ethdb/pebble"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/ethdb/leveldb"
+	"github.com/crytic/medusa-geth/ethdb/pebble"
+	"github.com/crytic/medusa-geth/log"
 )
 
 // openOptions contains the options to apply when opening a database.

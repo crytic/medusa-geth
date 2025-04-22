@@ -22,11 +22,11 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/trie/trienode"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/trie/trienode"
 )
 
 func TestEmptyIterator(t *testing.T) {

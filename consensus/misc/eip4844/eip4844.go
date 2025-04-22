@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/params/forks"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/params"
+	"github.com/crytic/medusa-geth/params/forks"
 )
 
 var (

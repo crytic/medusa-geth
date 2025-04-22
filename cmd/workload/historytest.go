@@ -21,10 +21,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/internal/utesting"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/internal/utesting"
 )
 
 // historyTest is the content of a history test.

@@ -20,13 +20,13 @@ import (
 	"maps"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/triedb"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/state"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/core/vm"
+	"github.com/crytic/medusa-geth/triedb"
 )
 
 type precompileContract struct{}

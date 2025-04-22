@@ -21,15 +21,15 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/prque"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/common/prque"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/metrics"
 )
 
 // ErrNotRequested is returned by the trie sync when it's requested to process a

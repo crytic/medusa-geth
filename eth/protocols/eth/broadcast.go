@@ -17,8 +17,8 @@
 package eth
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/types"
 )
 
 const (

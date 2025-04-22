@@ -5,12 +5,12 @@ package ethconfig
 import (
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/txpool/blobpool"
-	"github.com/ethereum/go-ethereum/core/txpool/legacypool"
-	"github.com/ethereum/go-ethereum/eth/gasprice"
-	"github.com/ethereum/go-ethereum/miner"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core"
+	"github.com/crytic/medusa-geth/core/txpool/blobpool"
+	"github.com/crytic/medusa-geth/core/txpool/legacypool"
+	"github.com/crytic/medusa-geth/eth/gasprice"
+	"github.com/crytic/medusa-geth/miner"
 )
 
 // MarshalTOML marshals as TOML.

@@ -24,11 +24,11 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/crytic/medusa-geth/accounts"
+	"github.com/crytic/medusa-geth/accounts/keystore"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/math"
+	"github.com/crytic/medusa-geth/crypto"
 )
 
 // UIServerAPI implements methods Clef provides for a UI to query, in the bidirectional communication

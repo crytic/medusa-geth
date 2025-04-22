@@ -17,9 +17,9 @@
 package sync
 
 import (
-	"github.com/ethereum/go-ethereum/beacon/light/request"
-	"github.com/ethereum/go-ethereum/beacon/types"
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/crytic/medusa-geth/beacon/light/request"
+	"github.com/crytic/medusa-geth/beacon/types"
+	"github.com/crytic/medusa-geth/common"
 )
 
 var (

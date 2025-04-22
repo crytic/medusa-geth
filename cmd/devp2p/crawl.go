@@ -22,8 +22,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/p2p/enode"
 )
 
 type crawler struct {

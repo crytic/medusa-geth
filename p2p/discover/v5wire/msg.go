@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/common/mclock"
+	"github.com/crytic/medusa-geth/p2p/enode"
+	"github.com/crytic/medusa-geth/p2p/enr"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 // Packet is implemented by all message types.

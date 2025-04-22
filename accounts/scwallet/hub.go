@@ -41,10 +41,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/crytic/medusa-geth/accounts"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/event"
+	"github.com/crytic/medusa-geth/log"
 	pcsc "github.com/gballet/go-libpcsclite"
 )
 

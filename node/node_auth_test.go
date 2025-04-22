@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/golang-jwt/jwt/v4"
 )
 
