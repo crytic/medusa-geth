@@ -125,6 +125,16 @@ func (c *Contract) Caller() common.Address {
 	return c.caller
 }
 
+// MEDUSA: We need a way to set the caller address for cheatcodes (e.g. prank)
+// so we need to be able to update the caller
+
+// SetCaller sets the caller
+func (c *Contract) SetCaller(caller common.Address) {
+	c.caller = caller
+}
+
+// END medusa code
+
 // UseGas attempts the use gas and subtracts it and returns true on success
 func (c *Contract) UseGas(gas uint64, logger *tracing.Hooks, reason tracing.GasChangeReason) (ok bool) {
 	if c.Gas < gas {
