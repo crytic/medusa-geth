@@ -20,8 +20,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/rawdb"
 )
 
 func TestBlockchain(t *testing.T) {
@@ -78,7 +78,7 @@ func TestExecutionSpecBlocktests(t *testing.T) {
 	}
 	bt := new(testMatcher)
 
-	// These tests fail as of https://github.com/ethereum/go-ethereum/pull/28666, since we
+	// These tests fail as of https://github.com/crytic/medusa-geth/pull/28666, since we
 	// no longer delete "leftover storage" when deploying a contract.
 	bt.skipLoad(`^cancun/eip6780_selfdestruct/selfdestruct/self_destructing_initcode_create_tx.json`)
 	bt.skipLoad(`^cancun/eip6780_selfdestruct/selfdestruct/self_destructing_initcode.json`)

@@ -23,12 +23,12 @@ import (
 	"os"
 	"strings"
 
+	"github.com/crytic/medusa-geth/internal/ethapi"
+	"github.com/crytic/medusa-geth/internal/jsre/deps"
+	"github.com/crytic/medusa-geth/log"
+	"github.com/crytic/medusa-geth/signer/core"
+	"github.com/crytic/medusa-geth/signer/storage"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/jsre/deps"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/storage"
 )
 
 // consoleOutput is an override for the console.log and console.error methods to

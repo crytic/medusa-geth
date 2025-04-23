@@ -19,9 +19,9 @@ package js
 import (
 	"math/big"
 
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/core/tracing"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/tracing"
 )
 
 func (jst *jsTracer) CaptureArbitrumTransfer(

@@ -20,9 +20,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/beacon/light"
-	"github.com/ethereum/go-ethereum/beacon/light/request"
-	"github.com/ethereum/go-ethereum/beacon/types"
+	"github.com/crytic/medusa-geth/beacon/light"
+	"github.com/crytic/medusa-geth/beacon/light/request"
+	"github.com/crytic/medusa-geth/beacon/types"
 )
 
 type requestWithID struct {

@@ -3,11 +3,11 @@ package arbitrum
 import (
 	"context"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/ethapi/override"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common/hexutil"
+	"github.com/crytic/medusa-geth/core"
+	"github.com/crytic/medusa-geth/internal/ethapi"
+	"github.com/crytic/medusa-geth/internal/ethapi/override"
+	"github.com/crytic/medusa-geth/rpc"
 )
 
 type TransactionArgs = ethapi.TransactionArgs

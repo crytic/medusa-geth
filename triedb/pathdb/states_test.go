@@ -21,8 +21,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/rlp"
 )
 
 func TestStatesMerge(t *testing.T) {

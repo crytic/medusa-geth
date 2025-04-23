@@ -19,17 +19,17 @@ package state
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/lru"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state/snapshot"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/trie"
-	"github.com/ethereum/go-ethereum/trie/trienode"
-	"github.com/ethereum/go-ethereum/trie/utils"
-	"github.com/ethereum/go-ethereum/triedb"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/common/lru"
+	"github.com/crytic/medusa-geth/core/rawdb"
+	"github.com/crytic/medusa-geth/core/state/snapshot"
+	"github.com/crytic/medusa-geth/core/types"
+	"github.com/crytic/medusa-geth/crypto"
+	"github.com/crytic/medusa-geth/ethdb"
+	"github.com/crytic/medusa-geth/trie"
+	"github.com/crytic/medusa-geth/trie/trienode"
+	"github.com/crytic/medusa-geth/trie/utils"
+	"github.com/crytic/medusa-geth/triedb"
 )
 
 const (

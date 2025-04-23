@@ -26,9 +26,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/internal/flags"
+	"github.com/crytic/medusa-geth/rpc"
 	"github.com/urfave/cli/v2"
 )
 

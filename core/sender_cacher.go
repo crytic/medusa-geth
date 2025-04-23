@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/crytic/medusa-geth/core/types"
 )
 
 // senderCacherOnce is used to ensure that the SenderCacher is initialized only once.

@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/crytic/medusa-geth/common"
+	"github.com/crytic/medusa-geth/eth/protocols/eth"
+	"github.com/crytic/medusa-geth/eth/protocols/snap"
+	"github.com/crytic/medusa-geth/p2p"
 )
 
 var (

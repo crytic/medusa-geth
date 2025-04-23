@@ -16,7 +16,7 @@
 
 package state
 
-import "github.com/ethereum/go-ethereum/metrics"
+import "github.com/crytic/medusa-geth/metrics"
 
 var (
 	accountReadMeters        = metrics.NewRegisteredMeter("state/read/accounts", nil)

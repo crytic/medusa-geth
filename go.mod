@@ -1,4 +1,4 @@
-module github.com/ethereum/go-ethereum
+module github.com/crytic/medusa-geth
 
 go 1.23.0
 
