@@ -551,7 +551,7 @@ func (s *stateObject) CodeSize() int {
 func (s *stateObject) SetCode(codeHash common.Hash, code []byte) (prev []byte) {
 	prev = slices.Clone(s.code)
 	s.db.journal.setCode(s.address, prev)
-	s.setCode(codeHash, code)
+	s.setCode(codeHash, slices.Clone(code))
 	return prev
 }
 

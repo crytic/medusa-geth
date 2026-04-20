@@ -134,6 +134,25 @@ func TestIterativeDump(t *testing.T) {
 	}
 }
 
+func TestSetCodeClonesInput(t *testing.T) {
+	sdb, _ := New(types.EmptyRootHash, NewDatabaseForTesting())
+	addr := common.BytesToAddress([]byte{0x01})
+
+	code := []byte{0x61, 0x00, 0x0f, 0x57}
+	wantCode := bytes.Clone(code)
+	wantHash := crypto.Keccak256Hash(wantCode)
+
+	sdb.SetCode(addr, code)
+	code[2] = 0xa1
+
+	if got := sdb.GetCode(addr); !bytes.Equal(got, wantCode) {
+		t.Fatalf("stored code should not alias caller buffer: got %x want %x", got, wantCode)
+	}
+	if got := sdb.GetCodeHash(addr); got != wantHash {
+		t.Fatalf("stored code hash mismatch: got %s want %s", got.Hex(), wantHash.Hex())
+	}
+}
+
 func TestNull(t *testing.T) {
 	s := newStateEnv()
 	address := common.HexToAddress("0x823140710bf13990e4500136726d8b55")
