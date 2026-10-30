@@ -28,6 +28,8 @@ import (
 type accessList struct {
 	addresses map[common.Address]int
 	slots     []map[common.Hash]struct{}
+	// oversized remembers growth even if journal rollback removes the entries.
+	oversized bool
 }
 
 // ContainsAddress returns true if the address is in the access list.
@@ -59,9 +61,26 @@ func newAccessList() *accessList {
 	}
 }
 
+// reset starts a new transaction while retaining modest map allocations.
+// Large exceptional transactions must not permanently inflate retained storage.
+func (al *accessList) reset() {
+	if al.oversized {
+		al.addresses = make(map[common.Address]int)
+		al.slots = nil
+		al.oversized = false
+		return
+	}
+	clear(al.addresses)
+	for _, slots := range al.slots[:cap(al.slots)] {
+		clear(slots)
+	}
+	al.slots = al.slots[:0]
+}
+
 // Copy creates an independent copy of an accessList.
 func (al *accessList) Copy() *accessList {
 	cp := newAccessList()
+	cp.oversized = al.oversized
 	cp.addresses = maps.Clone(al.addresses)
 	cp.slots = make([]map[common.Hash]struct{}, len(al.slots))
 	for i, slotMap := range al.slots {
@@ -77,6 +96,9 @@ func (al *accessList) AddAddress(address common.Address) bool {
 		return false
 	}
 	al.addresses[address] = -1
+	if len(al.addresses) > 4096 {
+		al.oversized = true
+	}
 	return true
 }
 
@@ -90,14 +112,28 @@ func (al *accessList) AddSlot(address common.Address, slot common.Hash) (addrCha
 	if !addrPresent || idx == -1 {
 		// Address not present, or addr present but no slots there
 		al.addresses[address] = len(al.slots)
-		slotmap := map[common.Hash]struct{}{slot: {}}
+		var slotmap map[common.Hash]struct{}
+		if len(al.slots) < cap(al.slots) {
+			slotmap = al.slots[:len(al.slots)+1][len(al.slots)]
+		}
+		if slotmap == nil {
+			slotmap = make(map[common.Hash]struct{})
+		}
+		clear(slotmap)
+		slotmap[slot] = struct{}{}
 		al.slots = append(al.slots, slotmap)
+		if len(al.addresses) > 4096 || cap(al.slots) > 256 {
+			al.oversized = true
+		}
 		return !addrPresent, true
 	}
 	// There is already an (address,slot) mapping
 	slotmap := al.slots[idx]
 	if _, ok := slotmap[slot]; !ok {
 		slotmap[slot] = struct{}{}
+		if len(slotmap) > 4096 {
+			al.oversized = true
+		}
 		// Journal add slot change
 		return false, true
 	}

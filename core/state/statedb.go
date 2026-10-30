@@ -1346,8 +1346,8 @@ func (s *StateDB) Prepare(rules params.Rules, sender, coinbase common.Address, d
 	}
 	if rules.IsEIP2929 {
 		// Clear out any leftover from previous executions
-		al := newAccessList()
-		s.accessList = al
+		al := s.accessList
+		al.reset()
 
 		al.AddAddress(sender)
 		if dst != nil {

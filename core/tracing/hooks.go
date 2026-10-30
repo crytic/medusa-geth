@@ -189,13 +189,17 @@ type (
 
 type Hooks struct {
 	// VM events
-	OnTxStart   TxStartHook
-	OnTxEnd     TxEndHook
-	OnEnter     EnterHook
-	OnExit      ExitHook
-	OnOpcode    OpcodeHook
-	OnFault     FaultHook
-	OnGasChange GasChangeHook
+	OnTxStart TxStartHook
+	OnTxEnd   TxEndHook
+	OnEnter   EnterHook
+	OnExit    ExitHook
+	OnOpcode  OpcodeHook
+	// OnOpcodeForScope optionally selects a frame-local opcode hook once the
+	// interpreter scope exists. A nil result disables opcode callbacks for that
+	// frame. Other tracing hooks remain active. When unset, OnOpcode is unchanged.
+	OnOpcodeForScope func(OpContext) OpcodeHook
+	OnFault          FaultHook
+	OnGasChange      GasChangeHook
 	// Chain events
 	OnBlockchainInit    BlockchainInitHook
 	OnClose             CloseHook

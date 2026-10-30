@@ -146,7 +146,7 @@ func TestCreateGas(t *testing.T) {
 				Transfer:    func(StateDB, common.Address, common.Address, *uint256.Int) {},
 				BlockNumber: big.NewInt(0),
 			}
-			config := Config{}
+			config := Config{ConfigExtensions: &ConfigExtensions{}}
 			if tt.eip3860 {
 				config.ExtraEips = []int{3860}
 			}

@@ -327,9 +327,33 @@ func (t *tracerAllHooks) hooks() *Hooks {
 		}
 		hookMethod := reflect.MakeFunc(field.Type, func(args []reflect.Value) []reflect.Value {
 			t.hooksCalled[field.Name] = true
-			return nil
+			results := make([]reflect.Value, field.Type.NumOut())
+			for j := range results {
+				results[j] = reflect.Zero(field.Type.Out(j))
+			}
+			return results
 		})
 		hooksValue.Field(i).Set(hookMethod)
 	}
 	return h
+}
+
+func TestJournalScopeOpcodeHook(t *testing.T) {
+	selected, called := 0, 0
+	hooks := &Hooks{
+		OnBalanceChange: func(common.Address, *big.Int, *big.Int, BalanceChangeReason) {},
+		OnOpcodeForScope: func(OpContext) OpcodeHook {
+			selected++
+			return func(uint64, byte, uint64, uint64, OpContext, []byte, int, error) { called++ }
+		},
+	}
+	wrapped, err := WrapWithJournal(hooks)
+	if err != nil {
+		t.Fatal(err)
+	}
+	hook := wrapped.OnOpcodeForScope(nil)
+	hook(0, 0, 0, 0, nil, nil, 0, nil)
+	if selected != 1 || called != 1 {
+		t.Fatalf("selected=%d called=%d", selected, called)
+	}
 }

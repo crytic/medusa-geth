@@ -91,7 +91,7 @@ func (c *Contract) isCode(udest uint64) bool {
 		if !exist {
 			// Do the analysis and save in parent context
 			// We do not need to store it in c.analysis
-			analysis = codeBitmap(c.Code)
+			analysis = cachedCodeBitmap(c.CodeHash, c.Code)
 			c.jumpdests[c.CodeHash] = analysis
 		}
 		// Also stash it in current contract for faster access

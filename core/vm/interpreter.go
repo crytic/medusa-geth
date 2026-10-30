@@ -29,6 +29,8 @@ import (
 
 // Config are the configuration options for the Interpreter
 type Config struct {
+	// ReadOnlyCallMemo may reuse a proven read-only root frame. Nil by default.
+	ReadOnlyCallMemo        RootCallMemo
 	Tracer                  *tracing.Hooks
 	NoBaseFee               bool  // Forces the EIP-1559 baseFee to 0 (needed for 0 price calls)
 	EnablePreimageRecording bool  // Enables recording of SHA3/keccak preimages
@@ -177,6 +179,15 @@ func (in *EVMInterpreter) Run(contract *Contract, input []byte, readOnly bool) (
 	// as every returning call will return new data anyway.
 	in.returnData = nil
 
+	if memo := in.evm.Config.ReadOnlyCallMemo; memo != nil && in.evm.depth == 1 {
+		if output, data, gas, hit := memo.Lookup(in.evm, contract, input, in.readOnly, in.evm.chainRules); hit {
+			contract.Gas = gas
+			in.returnData = data
+			return output, nil
+		}
+		defer func() { memo.Store(ret, in.returnData, contract.Gas, err) }()
+	}
+
 	// Don't bother with the execution if there's no code.
 	if len(contract.Code) == 0 {
 		return nil, nil
@@ -211,14 +222,23 @@ func (in *EVMInterpreter) Run(contract *Contract, input []byte, readOnly bool) (
 		mem.Free()
 	}()
 	contract.Input = input
+	var scopeOpcode tracing.OpcodeHook
+	useScopeOpcode := debug && in.evm.Config.Tracer.OnOpcodeForScope != nil
+	if useScopeOpcode {
+		scopeOpcode = in.evm.Config.Tracer.OnOpcodeForScope(callContext)
+	}
 
 	if debug {
 		defer func() { // this deferred method handles exit-with-error
 			if err == nil {
 				return
 			}
-			if !logged && in.evm.Config.Tracer.OnOpcode != nil {
-				in.evm.Config.Tracer.OnOpcode(pcCopy, byte(op), gasCopy, cost, callContext, in.returnData, in.evm.depth, VMErrorFromErr(err))
+			onOpcode := in.evm.Config.Tracer.OnOpcode
+			if useScopeOpcode {
+				onOpcode = scopeOpcode
+			}
+			if !logged && onOpcode != nil {
+				onOpcode(pcCopy, byte(op), gasCopy, cost, callContext, in.returnData, in.evm.depth, VMErrorFromErr(err))
 			}
 			if logged && in.evm.Config.Tracer.OnFault != nil {
 				in.evm.Config.Tracer.OnFault(pcCopy, byte(op), gasCopy, cost, callContext, in.evm.depth, VMErrorFromErr(err))
@@ -299,8 +319,16 @@ func (in *EVMInterpreter) Run(contract *Contract, input []byte, readOnly bool) (
 			if in.evm.Config.Tracer.OnGasChange != nil {
 				in.evm.Config.Tracer.OnGasChange(gasCopy, gasCopy-cost, tracing.GasChangeCallOpCode)
 			}
-			if in.evm.Config.Tracer.OnOpcode != nil {
-				in.evm.Config.Tracer.OnOpcode(pc, byte(op), gasCopy, cost, callContext, in.returnData, in.evm.depth, VMErrorFromErr(err))
+			onOpcode := in.evm.Config.Tracer.OnOpcode
+			if useScopeOpcode {
+				onOpcode = scopeOpcode
+			}
+			if onOpcode != nil {
+				onOpcode(pc, byte(op), gasCopy, cost, callContext, in.returnData, in.evm.depth, VMErrorFromErr(err))
+				logged = true
+			}
+			if useScopeOpcode {
+				// A frame may disable opcode callbacks while retaining OnFault.
 				logged = true
 			}
 		}

@@ -405,7 +405,8 @@ func benchmarkNonModifyingCode(gas uint64, code []byte, name string, tracerCode 
 			b.Fatal(err)
 		}
 		cfg.EVMConfig = vm.Config{
-			Tracer: tracer.Hooks,
+			Tracer:           tracer.Hooks,
+			ConfigExtensions: &vm.ConfigExtensions{},
 		}
 	}
 	destination := common.BytesToAddress([]byte("contract"))
@@ -787,7 +788,8 @@ func TestRuntimeJSTracer(t *testing.T) {
 				GasLimit: 1000000,
 				State:    statedb,
 				EVMConfig: vm.Config{
-					Tracer: tracer.Hooks,
+					Tracer:           tracer.Hooks,
+					ConfigExtensions: &vm.ConfigExtensions{},
 				}})
 			if err != nil {
 				t.Fatal("didn't expect error", err)
@@ -821,7 +823,8 @@ func TestJSTracerCreateTx(t *testing.T) {
 	_, _, _, err = Create(code, &Config{
 		State: statedb,
 		EVMConfig: vm.Config{
-			Tracer: tracer.Hooks,
+			Tracer:           tracer.Hooks,
+			ConfigExtensions: &vm.ConfigExtensions{},
 		}})
 	if err != nil {
 		t.Fatal(err)
